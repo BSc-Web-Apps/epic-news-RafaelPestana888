@@ -1,7 +1,6 @@
-import { useMatches } from '@remix-run/react'
 import { SearchBar } from '../molecules/SearchBar'
 import LoginOrUserDropdown from './LoginOrUserDropdown'
-import logo from '~/assets/png/logo.png';
+import logo from '~/assets/png/logo.png'
 import { Link, useMatches } from '@remix-run/react'
 
 

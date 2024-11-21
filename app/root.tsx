@@ -7,6 +7,7 @@ import rootLinkElements from '~/utils/providers/rootLinkElements'
 import { loader } from './__root.server'
 import useTheme from './hooks/useTheme.tsx'
 import HeaderWithSearch from './components/organisms/HeaderWithSearch'
+import FooterMenuRight from './components/organisms/Footer/FooterMenuRight'
 
 export const links: LinksFunction = () => {
   return rootLinkElements
@@ -33,6 +34,8 @@ export default function App() {
         <div className="container flex justify-between pb-5">
           <ThemeSwitch userPreference={data.requestInfo.userPrefs.theme} />
         </div>
+
+        <FooterMenuRight />
       </div>
     </Document>
   )

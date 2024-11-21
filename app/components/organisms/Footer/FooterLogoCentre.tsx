@@ -1,5 +1,5 @@
 import { Link, NavLink } from '@remix-run/react'
-import logo from '#app/assets/svg/icon-placeholder.svg'
+import logo from '~/assets/png/logo.png'
 import SocialMediaButtons from '#app/components/molecules/SocialMediaButtons'
 import { type FooterProps } from './FooterBasic'
 
@@ -27,7 +27,7 @@ const FooterLogoCentre = ({
 					</div>
 
 					<Link to="/" className="flex w-20 items-center justify-center">
-						<img src={logo} alt={altText} />
+					<img src={logo} alt="Epic News Logo" className="w-16" />
 					</Link>
 
 					<div
