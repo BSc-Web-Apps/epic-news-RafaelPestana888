@@ -1,5 +1,5 @@
 import { type LinksFunction } from '@remix-run/node'
-import { useLoaderData } from '@remix-run/react'
+import { Outlet, useLoaderData } from '@remix-run/react'
 import Document from '~/components/shared-layout/Document'
 import ThemeSwitch from '~/components/shared-layout/ThemeSwitch'
 import { useNonce } from '~/utils/nonce-provider.ts'
@@ -27,7 +27,7 @@ export default function App() {
         <HeaderWithSearch />
 
         <div className="flex-1">
-          <main className="grid h-full place-items-center">
+          {/* <main className="grid h-full place-items-center">
             <h1 className="text-mega">Welcome to Epic News!</h1>
             <div className="w-full py-16">
               <HeroCallToAction image="https://www.helpguide.org/wp-content/uploads/2020/01/Social-Media-and-Mental-Health.webp">
@@ -39,7 +39,8 @@ export default function App() {
                   </div>
                 </HeroCallToAction>
             </div>
-          </main>
+          </main> */}
+          <Outlet />
         </div>
 
         <div className="container flex justify-between pb-5">
