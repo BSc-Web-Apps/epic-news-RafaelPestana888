@@ -8,6 +8,7 @@ import { loader } from './__root.server'
 import useTheme from './hooks/useTheme.tsx'
 import HeaderWithSearch from './components/organisms/HeaderWithSearch'
 import FooterMenuRight from './components/organisms/Footer/FooterMenuRight'
+import HeroCallToAction from './components/organisms/Hero/HeroCallToAction.tsx'
 
 export const links: LinksFunction = () => {
   return rootLinkElements
@@ -28,6 +29,16 @@ export default function App() {
         <div className="flex-1">
           <main className="grid h-full place-items-center">
             <h1 className="text-mega">Welcome to Epic News!</h1>
+            <div className="w-full py-16">
+              <HeroCallToAction image="https://www.helpguide.org/wp-content/uploads/2020/01/Social-Media-and-Mental-Health.webp">
+                <div className="flex flex-col gap-8 px-8">
+                  <h2 className="text-h2">Welcome to Epic News</h2>
+                  <p className="text-lg">
+                    Keep up to date with the latest tech news.
+                  </p>
+                  </div>
+                </HeroCallToAction>
+            </div>
           </main>
         </div>
 
