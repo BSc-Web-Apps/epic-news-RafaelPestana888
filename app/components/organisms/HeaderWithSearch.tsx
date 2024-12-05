@@ -1,7 +1,7 @@
+import { Link, useMatches } from '@remix-run/react'
+import logo from '~/assets/png/logo.png'
 import { SearchBar } from '../molecules/SearchBar'
 import LoginOrUserDropdown from './LoginOrUserDropdown'
-import logo from '~/assets/png/logo.png'
-import { Link, useMatches } from '@remix-run/react'
 
 export default function HeaderWithSearch() {
 	const matches = useMatches()
@@ -23,6 +23,7 @@ export default function HeaderWithSearch() {
 				<div className="flex flex-1 justify-center gap-8">
 					<Link
 						to="/news"
+						prefetch="intent"
 						className="text-sm font-semibold text-muted-foreground transition hover:text-foreground"
 					>
 						News
