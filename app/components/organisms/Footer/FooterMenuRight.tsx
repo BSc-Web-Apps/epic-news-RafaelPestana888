@@ -1,5 +1,5 @@
 import { Link, NavLink } from '@remix-run/react'
-import logo from '#app/assets/svg/icon-placeholder.svg'
+import logo from '~/assets/png/logo.png'
 import { Button } from '#app/components/atoms/Button'
 import SocialMediaButtons from '#app/components/molecules/SocialMediaButtons'
 import { type FooterProps } from './FooterBasic'
@@ -12,7 +12,7 @@ const FooterMenuRight = ({
 		<footer className="bg-secondary lg:py-16 dark:bg-dark-secondary">
 			<div className="container items-center justify-between border-b border-muted-foreground/75 py-8 lg:flex dark:border-dark-muted-foreground/75">
 				<Link to="/" className="flex w-20 items-center justify-center lg:w-24">
-					<img src={logo} alt={altText} />
+				<img src={logo} alt="Epic News Logo" className="w-16" />
 				</Link>
 
 				<div className="lg:flex">
