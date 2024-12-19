@@ -1,5 +1,6 @@
 import { type LinksFunction } from '@remix-run/node'
 import { Outlet, useLoaderData } from '@remix-run/react'
+import { AuthenticityTokenProvider } from 'remix-utils/csrf/react'
 import Document from '~/components/shared-layout/Document'
 import ThemeSwitch from '~/components/shared-layout/ThemeSwitch'
 import { useNonce } from '~/utils/nonce-provider.ts'
@@ -8,7 +9,7 @@ import { type loader } from './__root.server'
 import FooterMenuRight from './components/organisms/Footer/FooterMenuRight'
 import HeaderWithSearch from './components/organisms/HeaderWithSearch'
 import useTheme from './hooks/useTheme.tsx'
-import { AuthenticityTokenProvider } from 'remix-utils/csrf/react'
+import { HoneypotProvider } from 'remix-utils/honeypot/react'
 
 export const links: LinksFunction = () => {
 	return rootLinkElements
@@ -23,7 +24,8 @@ export default function App() {
 
 	return (
 		<AuthenticityTokenProvider token={data.csrfToken}>
-		<Document nonce={nonce} theme={theme}>
+		 <HoneypotProvider {...data.honeyProps}>
+	    	<Document nonce={nonce} theme={theme}>
 			<div className="flex h-screen flex-col justify-between">
 				<HeaderWithSearch />
 
@@ -38,6 +40,7 @@ export default function App() {
 				<FooterMenuRight />
 			</div>
 		</Document>
+		</HoneypotProvider>
 		</AuthenticityTokenProvider>
 	)
 }
