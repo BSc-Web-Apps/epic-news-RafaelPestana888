@@ -51,6 +51,7 @@ export default function Index() {
           {allArticles.length > 0 ? (
             allArticles.map(article => (
               <ArticleCard
+              articleId={article.id}
                 key={article.id}
                 title={article.title}
                 category={article.category?.name}
