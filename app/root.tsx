@@ -8,6 +8,7 @@ import { type loader } from './__root.server'
 import FooterMenuRight from './components/organisms/Footer/FooterMenuRight'
 import HeaderWithSearch from './components/organisms/HeaderWithSearch'
 import useTheme from './hooks/useTheme.tsx'
+import { AuthenticityTokenProvider } from 'remix-utils/csrf/react'
 
 export const links: LinksFunction = () => {
 	return rootLinkElements
@@ -21,6 +22,7 @@ export default function App() {
 	const theme = useTheme()
 
 	return (
+		<AuthenticityTokenProvider token={data.csrfToken}>
 		<Document nonce={nonce} theme={theme}>
 			<div className="flex h-screen flex-col justify-between">
 				<HeaderWithSearch />
@@ -36,5 +38,6 @@ export default function App() {
 				<FooterMenuRight />
 			</div>
 		</Document>
+		</AuthenticityTokenProvider>
 	)
 }
