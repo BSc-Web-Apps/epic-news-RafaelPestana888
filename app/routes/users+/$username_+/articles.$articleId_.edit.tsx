@@ -12,10 +12,10 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
 	const userId = await requireUserId(request)
 	const categories = await prisma.articleCategory.findMany({
 		select: {
-		  id: true,
-		  name: true,
+			id: true,
+			name: true,
 		},
-	  })
+	})
 	const article = await prisma.article.findFirst({
 		select: {
 			id: true,
@@ -23,10 +23,10 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
 			content: true,
 			category: {
 				select: {
-				  id: true,
-				  name: true,
+					id: true,
+					name: true,
 				},
-			  },
+			},
 			images: {
 				select: {
 					id: true,

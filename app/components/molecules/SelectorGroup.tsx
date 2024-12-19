@@ -8,10 +8,10 @@ interface SelectorGroupProps {
 }
 
 export default function SelectorGroup({
-	 options,
-	 name,
-	 initialValue,
-	}: SelectorGroupProps) {
+	options,
+	name,
+	initialValue,
+}: SelectorGroupProps) {
 	let [selectedValue, setSelectedValue] = useState(initialValue ?? '')
 
 	return (
@@ -31,7 +31,7 @@ export default function SelectorGroup({
 					<span className="font-semibold">{option.label}</span>
 				</RadioGroup.Item>
 			))}
-	       <input type="hidden" name={name} value={selectedValue} />
+			<input type="hidden" name={name} value={selectedValue} />
 		</RadioGroup.Root>
 	)
 }

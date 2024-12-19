@@ -40,11 +40,11 @@ export async function loader({ params }: LoaderFunctionArgs) {
 			updatedAt: true,
 			category: {
 				select: {
-				  id: true,
-				  name: true,
-			   },
-		    },
-		
+					id: true,
+					name: true,
+				},
+			},
+
 			images: {
 				select: {
 					id: true,
@@ -120,10 +120,10 @@ export default function ArticleRoute() {
 		<div className="absolute inset-0 flex flex-col px-10">
 			<h2 className="mb-2 pt-12 text-h2 lg:mb-6">{data.article.title}</h2>
 			<div className="mb-4">
-        <p className="w-fit rounded-lg bg-card px-4 py-2 text-sm text-card-foreground">
-          {data.article.category?.name ?? 'General News'}
-        </p>
-      </div>
+				<p className="w-fit rounded-lg bg-card px-4 py-2 text-sm text-card-foreground">
+					{data.article.category?.name ?? 'General News'}
+				</p>
+			</div>
 			<div className={`${displayBar ? 'pb-24' : 'pb-12'} overflow-y-auto`}>
 				<ul className="flex flex-wrap gap-5 py-5">
 					{data.article.images.map(image => (
