@@ -8,15 +8,12 @@ import {
 	type FieldMetadata,
 } from '@conform-to/react'
 import { getZodConstraint, parseWithZod } from '@conform-to/zod'
-import { 
-	type ArticleCategory,
-	type Article,
-	 type ArticleImage
-	 } from '@prisma/client'
+import { type Article, type ArticleImage } from '@prisma/client'
 import { type SerializeFrom } from '@remix-run/node'
 import { Form, useActionData } from '@remix-run/react'
 import { useState } from 'react'
 import { z } from 'zod'
+import { GeneralErrorBoundary } from '~/components/ErrorBoundary.js'
 import { floatingToolbarClassName } from '~/components/floating-toolbar.tsx'
 import { ErrorList, Field, TextareaField } from '~/components/forms.tsx'
 import { Button } from '~/components/ui/button.tsx'
@@ -26,15 +23,11 @@ import { StatusButton } from '~/components/ui/status-button.tsx'
 import { Textarea } from '~/components/ui/textarea.tsx'
 import { cn, getArticleImgSrc, useIsPending } from '~/utils/misc.tsx'
 import { type action } from './__article-editor.server'
-import { GeneralErrorBoundary } from '~/components/ErrorBoundary.js'
-import SelectorGroup from '~/components/molecules/SelectorGroup.js'
 
 const titleMinLength = 1
 const titleMaxLength = 100
 const contentMinLength = 1
 const contentMaxLength = 10000
-const categoryMinLength = 1
-const categoryMaxLength = 30
 
 export const MAX_UPLOAD_SIZE = 1024 * 1024 * 3 // 3MB
 
@@ -54,27 +47,18 @@ export type ImageFieldset = z.infer<typeof ImageFieldsetSchema>
 export const ArticleEditorSchema = z.object({
 	id: z.string().optional(),
 	title: z.string().min(titleMinLength).max(titleMaxLength),
-	categoryId: z
-    .string()
-    .min(categoryMinLength)
-    .max(categoryMaxLength)
-    .optional(),
 	content: z.string().min(contentMinLength).max(contentMaxLength),
 	images: z.array(ImageFieldsetSchema).max(5).optional(),
 })
 
 export function ArticleEditor({
 	article,
-	categories,
 }: {
 	article?: SerializeFrom<
 		Pick<Article, 'id' | 'title' | 'content'> & {
-			category: Pick<ArticleCategory, 'id' | 'name'> | null
-		} & {
 			images: Array<Pick<ArticleImage, 'id' | 'altText'>>
 		}
 	>
-	categories: Array<Pick<ArticleCategory, 'id' | 'name'>>
 }) {
 	const actionData = useActionData<typeof action>()
 	const isPending = useIsPending()
@@ -88,7 +72,6 @@ export function ArticleEditor({
 		},
 		defaultValue: {
 			...article,
-			categoryId: article?.category?.id ?? '',
 			images: article?.images ?? [{}],
 		},
 		shouldRevalidate: 'onBlur',
@@ -122,7 +105,6 @@ export function ArticleEditor({
 							}}
 							errors={fields.title.errors}
 						/>
-						
 						<TextareaField
 							labelProps={{ children: 'Content' }}
 							textareaProps={{
@@ -130,17 +112,6 @@ export function ArticleEditor({
 							}}
 							errors={fields.content.errors}
 						/>
-						           <div className="pb-8">
-              <Label>Category</Label>
-              <SelectorGroup
-			      name="categoryId"
-				  initialValue={article?.category?.id ?? ''}
-                options={categories.map(category => ({
-                  value: category.id,
-                  label: category.name,
-                }))}
-              />
-            </div>
 						<div>
 							<Label>Images</Label>
 							<ul className="flex flex-col gap-4">
