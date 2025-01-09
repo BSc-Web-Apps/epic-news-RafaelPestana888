@@ -1,8 +1,9 @@
-import { getUserImgSrc } from '#app/utils/misc'
-import { useUser } from '#app/utils/user'
 import { useSubmit, Link, Form } from '@remix-run/react'
 import { useRef } from 'react'
+import { getUserImgSrc } from '#app/utils/misc'
+import { useUser } from '#app/utils/user'
 import { Button } from '../atoms/Button'
+import { Icon } from '../atoms/Icon'
 import {
 	DropdownMenu,
 	DropdownMenuTrigger,
@@ -10,7 +11,6 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 } from '../organisms/DropdownMenu'
-import { Icon } from '../atoms/Icon'
 
 export default function UserDropdown() {
 	const user = useUser()

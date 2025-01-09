@@ -1,9 +1,12 @@
-import { getUser } from '#server/user.server.js'
 import { parseWithZod } from '@conform-to/zod'
 import { invariantResponse } from '@epic-web/invariant'
-import { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node'
+import {
+	type ActionFunctionArgs,
+	type LoaderFunctionArgs,
+} from '@remix-run/node'
 import { json } from '@remix-run/react'
 import { z } from 'zod'
+import { getUser } from '#server/user.server.js'
 import { getUserId, logout } from './utils/auth.server'
 import { csrf } from './utils/csrf.server'
 import { honeypot } from './utils/honeypot.server'
