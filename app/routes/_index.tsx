@@ -10,6 +10,7 @@ export const meta: MetaFunction = () => [{ title: 'Epic News' }]
 
 export async function loader() {
 	const allArticles = await prisma.article.findMany({
+		where: { isPublished: true },
 		select: {
 			id: true,
 			title: true,
@@ -51,10 +52,11 @@ export default function Index() {
 					{allArticles.length > 0 ? (
 						allArticles.map(article => (
 							<ArticleCard
+								articleId={article.id}
 								key={article.id}
 								title={article.title}
 								category={article.category?.name}
-								// imageId={article.images[0]?.id}
+								imageId={article.images[0]?.id}
 							/>
 						))
 					) : (
