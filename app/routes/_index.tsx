@@ -45,6 +45,27 @@ export default function Index() {
 				</div>
 			</HeroCallToAction>
 
+			<div className="container py-16"></div>
+			<div class="w-400 flex h-48 flex-col justify-between bg-blue-600 p-4">
+				<h3 class="text-2xl font-bold text-gray-800">News headline</h3>
+				<p class="text-black-400">
+					example text, example text,example text,example text,example
+					text,example text,example text,example text,example text,example
+					text,example text,example text,example text,example text,example
+					text,example text,example text,example text,example text,example
+					text,example text, example text,example text,example text,example
+					text,example text,example text,example text,example text,example
+					text,example text,example text,example text,example text,example
+					text,example text, example text,example text,example text,example
+					text,example text,example text,example text,example text,example
+					text,example text,example text,example text, example text,example
+					text,example text,example text,example text,example text,example
+					text,example text,example text,example text, example text,example
+					text,example text,example text,example text,example text,example text,{' '}
+				</p>
+				<p class="text-black-400 text-xs">Category</p>
+			</div>
+
 			<div className="container py-16">
 				<h2 className="mb-8 text-h2 font-normal">Latest news</h2>
 
