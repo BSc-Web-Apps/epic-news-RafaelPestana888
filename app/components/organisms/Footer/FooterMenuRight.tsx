@@ -1,30 +1,30 @@
 import { Link, NavLink } from '@remix-run/react'
-import logo from '#app/assets/svg/icon-placeholder.svg'
 import { Button } from '#app/components/atoms/Button'
 import SocialMediaButtons from '#app/components/molecules/SocialMediaButtons'
+import logo from '~/assets/png/logo.png'
 import { type FooterProps } from './FooterBasic'
 
 const FooterMenuRight = ({
-	companyName = 'CHANGE THIS TO YOUR COMPANY NAME!',
+	companyName = 'Epic News!',
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (
 		<footer className="bg-secondary lg:py-16 dark:bg-dark-secondary">
 			<div className="container items-center justify-between border-b border-muted-foreground/75 py-8 lg:flex dark:border-dark-muted-foreground/75">
 				<Link to="/" className="flex w-20 items-center justify-center lg:w-24">
-					<img src={logo} alt={altText} />
+				<img src={logo} alt="Epic News Logo" className="w-16" />
 				</Link>
 
 				<div className="lg:flex">
 					<div className="flex items-start gap-6 py-8 font-bold text-secondary-foreground lg:mr-24 dark:text-dark-secondary-foreground">
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="news">News</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="about-us">About us</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="contact-us">Contact us</NavLink>
 						</div>
 					</div>
 
