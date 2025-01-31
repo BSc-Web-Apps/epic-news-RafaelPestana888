@@ -5,7 +5,7 @@ import logo from '~/assets/png/logo.png'
 import { type FooterProps } from './FooterBasic'
 
 const FooterMenuRight = ({
-	companyName = 'CHANGE THIS TO YOUR COMPANY NAME!',
+	companyName = 'Epic News!',
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (
@@ -18,13 +18,13 @@ const FooterMenuRight = ({
 				<div className="lg:flex">
 					<div className="flex items-start gap-6 py-8 font-bold text-secondary-foreground lg:mr-24 dark:text-dark-secondary-foreground">
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="news">News</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="about-us">About us</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="contact-us">Contact us</NavLink>
 						</div>
 					</div>
 

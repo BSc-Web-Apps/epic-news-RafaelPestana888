@@ -77,7 +77,6 @@ export default function Index() {
 								key={article.id}
 								title={article.title}
 								category={article.category?.name}
-								imageId={article.images[0]?.id}
 							/>
 						))
 					) : (
