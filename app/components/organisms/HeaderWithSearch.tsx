@@ -12,7 +12,7 @@ interface HeaderWithSearchProps {
 	const searchBar = isOnSearchPage ? null : <SearchBar status="idle" />
   
 	return (
-	  <header className="bg-emerald-50 py-6 dark:bg-emerald-950">
+	  <header className="bg-emerald-50 py-6 dark:bg-violet-950">
 		<nav className="container flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
 		  <Link to="/" className="group">
 			<div className="flex items-center gap-4 transition group-hover:opacity-80">
@@ -24,27 +24,27 @@ interface HeaderWithSearchProps {
 			{isAdminUser && (
 			  <Link
 				to="/admin-review"
-				className="rounded-lg bg-green-900 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-green-800"
+				className="rounded-lg bg-violet-900 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-violet-800"
 			  >
 				Admin Review
 			  </Link>
 			)}
 			<Link
 			  to="/news"
-			  className="text-sm font-semibold text-foreground transition hover:text-foreground/80"
+			  className="text-sm font-semibold text-foreground transition hover:text-foreground/40"
 			>
 			  News
 			</Link>
 			<Link
 			  to="/about-us"
 			  prefetch="intent"
-			  className="text-sm font-semibold text-foreground transition hover:text-foreground/80"
+			  className="text-sm font-semibold text-foreground transition hover:text-foreground/40"
 			>
 			  About us
 			</Link>
 			<Link
 			  to="/contact-us"
-			  className="text-sm font-semibold text-foreground transition hover:text-foreground/80"
+			  className="text-sm font-semibold text-foreground transition hover:text-foreground/40"
 			>
 			  Contact us
 			</Link>
