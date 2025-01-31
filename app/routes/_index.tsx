@@ -47,7 +47,7 @@ export default function Index() {
 
 			<div className="container py-16"></div>
 			<div class="w-400 flex h-100 flex-col justify-between bg-blue-2000 p-4">
-				<h3 class="text-2xl font-bold text-gray-300">Top news</h3>
+				<h3 class="text-2xl font-bold text-black-400">Top news</h3>
 				<p class="text-black-400">
 					example text, example text,example text,example text,example
 					text,example text,example text,example text,example text,example
@@ -67,7 +67,7 @@ export default function Index() {
 			</div>
 
 			<div className="container py-16">
-				<h2 className="mb-8 text-h2 font-normal">Latest news</h2>
+				<h2 className="mb-8 text-h2 font-bold">Latest news</h2>
 
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
 					{allArticles.length > 0 ? (
@@ -89,7 +89,7 @@ export default function Index() {
 
       <div className="container py-16"></div>
 			<div class="w-00 flex h-100 flex-col justify-between bg-blue-2000 p-4">
-				<h3 class="text-2xl font-bold text-gray-300">News headline</h3>
+				<h3 class="text-2xl font-bold text-black-400">News headline</h3>
 				<p class="text-black-400">
 					example text, example text,example text,example text,example
 					text,example text,example text,example text,example text,example
